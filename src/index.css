@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add this to your global CSS or the specific CSS file for your component */
+.scrollbar-custom::-webkit-scrollbar {
+    width: 8px; /* Adjust the width of the scrollbar */
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background-color: black; /* Black track */
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: black; /* You can customize the thumb color */
+    border-radius: 10px;
+  }
+  
