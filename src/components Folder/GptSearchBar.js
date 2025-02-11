@@ -1,9 +1,9 @@
-import openai from "../utils/openai"
 import React, { useRef } from 'react'
 import lang from '../utils/languageConstant'
 import { useDispatch, useSelector } from 'react-redux'
 import { API_OPTIONS } from "../utils/constants"
 import { addGptMoviesResult } from "../utils/gptSlice"
+import run from "../utils/geminiai";
 
 const GptSearchBar = () => {
 
@@ -19,9 +19,9 @@ const GptSearchBar = () => {
          '&include_adult=false&language=en-US&page=1',
       API_OPTIONS
     );
-    const json = await data.json()
+    const json = await data.json();
 
-    return json.Results;
+    return json.results;
   };
 
   const handleGptSearchClick = async () => {
@@ -29,15 +29,11 @@ const GptSearchBar = () => {
 
     const gptQuery = "Act as a Movie Recommendation system and suggest some movies for the query " + searchText.current.value + ". only give me names of 5 movies, comma separated like the example result given ahead. Example Result: Gadar, Don, Leo, Jailer, Koi Mil Gaya";
 
-    const gptResults = await openai.chat.completions.create({
-      messages: [{ role: 'user', content: gptQuery }],
-      model: 'gpt-3.5-turbo',
-    });
+    const gptResults = await run(gptQuery)
 
-    console.log(gptResults.choices?.[0]?.message?.content);
-    const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
+    const gptMovies = gptResults.split(",");
 
-    const promiseArray = gptMovies.map(movie => searchMovieTMDB(movie));
+    const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
     // This returns Promises because we are using async function with map
 
     const tmdbResults = await Promise.all(promiseArray)

@@ -17,3 +17,5 @@ export const BG_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/03ad76d1-e184-
 export const SUPPORTED_LANGUAGES = [{identifier: "en", name: "English"},{identifier: "hindi", name: "Hindi"},{identifier: "spanish", name: "Spanish"}]
 
 export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+
+export const GEMINI_KEY = process.env.REACT_APP_GEMINI_KEY;
