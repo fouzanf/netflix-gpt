@@ -61,16 +61,16 @@ const Header = () => {
           <div className='flex p-2 justify-between'>
             {showGptSearch &&
               (<select
-                className="p-3 m-2 bg-gray-900 text-white font-semibold rounded-lg shadow-md border border-gray-700 hover:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300 ease-in-out"
-                onChange={handleLanguageChange}
-              >
-                {SUPPORTED_LANGUAGES.map((lang) => (
-                  <option key={lang.identifier} value={lang.identifier} className="bg-gray-900 text-white">
-                    {lang.name}
-                  </option>
-                ))}
-              </select>
-              )}
+  className="p-3 m-2 bg-gray-900 text-white font-semibold rounded-lg shadow-md border border-gray-700 hover:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300 ease-in-out"
+  onChange={handleLanguageChange}
+>
+  {SUPPORTED_LANGUAGES.map((lang) => (
+    <option key={lang.identifier} value={lang.identifier} className="bg-gray-900 text-white">
+      {lang.name}
+    </option>
+  ))}
+</select>
+)}
               <button
                     className="py-2 px-6 mx-4 my-2 bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-lg shadow-md hover:from-pink-600 hover:to-red-600 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400"
                     onClick={handleGptSearchClick}

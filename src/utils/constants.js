@@ -18,4 +18,4 @@ export const SUPPORTED_LANGUAGES = [{identifier: "en", name: "English"},{identif
 
 export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
 
-export const GEMINI_KEY = "AIzaSyBl_7oxRzibpzUBV_lo6P0tIltRmu2k-YE";
+export const GEMINI_KEY = process.env.REACT_APP_GEMINI_KEY;
