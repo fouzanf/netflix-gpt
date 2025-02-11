@@ -1,23 +1,26 @@
-import React from 'react';
-
-const VideoTitle = ({ title, overview }) => {
+import React from 'react'
+import { BsPlayFill } from "react-icons/bs";
+const VideoTitle = ({title,overview}) => {
   return (
-    <div className="absolute inset-0 flex flex-col justify-center text-white bg-gradient-to-r from-black/80 via-black/50 to-transparent p-6 md:p-24">
-  <h1 className="text-3xl md:text-6xl font-bold drop-shadow-lg">{title}</h1>
-  <p className="hidden md:block py-6 text-lg md:w-1/2 text-gray-200">{overview}</p>
-  
-  <div className="mt-4 flex items-center gap-4">
-    <button className="flex items-center gap-2 bg-white text-black py-2 md:py-4 px-4 md:px-12 text-xl font-semibold rounded-lg shadow-md hover:bg-opacity-80 transition duration-300">
-      ▶ Play
-    </button>
-    <button className="hidden md:flex bg-gray-500 text-white py-2 px-6 md:py-4 md:px-12 text-xl bg-opacity-50 rounded-lg shadow-md hover:bg-opacity-70 transition duration-300">
-      More Info
-    </button>
-  </div>
-</div>
+    <div className='w-screen aspect-video absolute pt-[20%] px-6 md:px-24  text-white bg-gradient-to-r from-black'>
+        <h1 className='text-2xl md:text-6xl font-bold'>{title}</h1>
+        <p className='hidden md:inline-block py-6 text-lg w-2/4'>{overview}</p>
+        <div className='flex gap-3 my-4 md:m-0'>
 
-  );
-};
+          <button className="flex items-center gap-2 justify-center bg-white text-black font-bold tracking-wide p-2 md:p-4 px-4 md:px-12 text-lg md:text-xl rounded-lg shadow-md transition-all duration-300 hover:bg-gray-200 hover:scale-105 active:scale-95">
+            <BsPlayFill className="text-2xl md:text-3xl" />
+            <span className="font-semibold md:font-extrabold">Play</span>
+          </button>
 
-export default VideoTitle;
+          <button className="hidden md:flex items-center gap-2 justify-center bg-gray-500 text-white font-bold tracking-wide p-4 px-12 text-lg md:text-xl rounded-lg shadow-md bg-opacity-60 transition-all duration-300 hover:bg-opacity-80 hover:scale-105 active:scale-95">
+            <span className="font-semibold md:font-extrabold">More Info</span>
+          </button>
+
+
+        </div>
+    </div>
+  )
+}
+
+export default VideoTitle
 
