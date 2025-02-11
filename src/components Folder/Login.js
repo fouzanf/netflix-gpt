@@ -81,15 +81,51 @@ const Login = () => {
           alt='bg-image'
         />
       </div>
-      <form onSubmit={(e) => e.preventDefault()} className='w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80'>
-      <h1 className='font-bold text-2xl md:text-3xl py-4'>{isSignInForm ?  "Sign In" : "Sign Up"}</h1>
-        {!isSignInForm && (<input ref={name} type='text' placeholder='Full Name' className='p-4 my-4 w-full bg-gray-700 bg-opacity-80' />)}
-        <input ref={email} type='text' placeholder='Email Address' className='p-4 my-4 w-full bg-gray-700 bg-opacity-80 ' />
-        <input ref={password} type='password' placeholder='Password' className='p-4 my-4 w-full bg-gray-700 bg-opacity-80' />
-        <p className='text-red-500 font-bold text-lg p-2'>{errorMessage}</p>
-        <button className='p-4 my-6 bg-red-700 w-full rounded-lg' onClick={handleButtonClick}>{isSignInForm ?  "Sign In" : "Sign Up"}</button>
-        <p className='py-4 cursor-pointer' onClick={toggleSignInForm}>{isSignInForm ?  "New to Netflix? Sign Up Now" : "Already registered? Sign In Now."}</p>
+      <form 
+        onSubmit={(e) => e.preventDefault()} 
+        className="w-full max-w-md absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80 shadow-lg flex flex-col items-center space-y-6"
+      >
+        <h1 className="font-bold text-2xl md:text-3xl text-center">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
+  
+        <div className="w-full space-y-4">
+          {!isSignInForm && (
+            <input 
+              ref={name} 
+              type="text" 
+              placeholder="Full Name" 
+              className="p-4 w-full bg-gray-700 bg-opacity-80 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+        )}
+
+        <input 
+          ref={email} 
+          type="text" 
+          placeholder="Email Address" 
+          className="p-4 w-full bg-gray-700 bg-opacity-80 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+        />
+    
+        <input 
+          ref={password} 
+          type="password" 
+          placeholder="Password" 
+          className="p-4 w-full bg-gray-700 bg-opacity-80 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+        />
+      </div>
+  
+      {errorMessage && <p className="text-red-500 font-semibold text-lg text-center">{errorMessage}</p>}
+
+      <button 
+        className="p-4 w-full bg-red-700 rounded-lg font-semibold text-lg shadow-md hover:bg-red-600 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-500"
+        onClick={handleButtonClick}
+      >
+        {isSignInForm ? "Sign In" : "Sign Up"}
+      </button>
+
+      <p className="text-center cursor-pointer hover:underline text-gray-300" onClick={toggleSignInForm}>
+        {isSignInForm ? "New to Netflix? Sign Up Now" : "Already registered? Sign In Now."}
+      </p>
       </form>
+
     </div>
   )
 }
