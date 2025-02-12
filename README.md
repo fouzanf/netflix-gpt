@@ -70,8 +70,12 @@ Select a preferred language for multi-language support.
 👥 Contributing
 Contributions are welcome! If you have ideas for improvements or bug fixes, feel free to open an issue or submit a pull request.
 
+---
+
 📜 License
 This project is open-source and available under the MIT License.
+
+---
 
 Netflix GPT is an AI-powered movie discovery platform that blends advanced UI/UX design, interactive pop-ups, and AI-generated movie recommendations. It's a great showcase of modern web development practices.
 
