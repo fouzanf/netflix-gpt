@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MovieCard from "./MovieCard";
-import MovieModal from "./MovieModal"; // Import the modal component
+import MovieModal from "./MovieModal"; 
 
 const MovieList = ({ title, movies }) => {
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -13,7 +13,7 @@ const MovieList = ({ title, movies }) => {
           {movies?.map((movie) => (
             <MovieCard 
               key={movie.id} 
-              movie={movie} // Pass full movie object
+              movie={movie} 
               onClick={() => setSelectedMovie(movie)} // Set selected movie on click
             />
           ))}
